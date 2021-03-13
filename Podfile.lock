@@ -1,0 +1,36 @@
+PODS:
+  - NetworkUtilsKit (1.2):
+    - NetworkUtilsKit/Core (= 1.2)
+  - NetworkUtilsKit/Core (1.2):
+    - UtilsKit (~> 2.0.7)
+  - PromiseKit (6.13.1):
+    - PromiseKit/CorePromise (= 6.13.1)
+    - PromiseKit/Foundation (= 6.13.1)
+    - PromiseKit/UIKit (= 6.13.1)
+  - PromiseKit/CorePromise (6.13.1)
+  - PromiseKit/Foundation (6.13.1):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.13.1):
+    - PromiseKit/CorePromise
+  - UtilsKit (2.0.7):
+    - UtilsKit/Core (= 2.0.7)
+  - UtilsKit/Core (2.0.7)
+
+DEPENDENCIES:
+  - NetworkUtilsKit
+  - PromiseKit
+
+SPEC REPOS:
+  trunk:
+    - NetworkUtilsKit
+    - PromiseKit
+    - UtilsKit
+
+SPEC CHECKSUMS:
+  NetworkUtilsKit: 3c6cac1eec864dcd576d5413da7a7537d6ebf085
+  PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
+  UtilsKit: 0f31f54b7ba646a960497580b7e1a9a686a4a00a
+
+PODFILE CHECKSUM: 586a219f1917bb5011aa60ce2131dc5142a1442b
+
+COCOAPODS: 1.10.1
