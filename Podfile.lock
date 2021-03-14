@@ -1,4 +1,8 @@
 PODS:
+  - CoreDataUtilsKit (1.1):
+    - CoreDataUtilsKit/Core (= 1.1)
+  - CoreDataUtilsKit/Core (1.1):
+    - UtilsKit (~> 2.0)
   - NetworkUtilsKit (1.2):
     - NetworkUtilsKit/Core (= 1.2)
   - NetworkUtilsKit/Core (1.2):
@@ -17,20 +21,23 @@ PODS:
   - UtilsKit/Core (2.0.7)
 
 DEPENDENCIES:
+  - CoreDataUtilsKit
   - NetworkUtilsKit
   - PromiseKit
 
 SPEC REPOS:
   trunk:
+    - CoreDataUtilsKit
     - NetworkUtilsKit
     - PromiseKit
     - UtilsKit
 
 SPEC CHECKSUMS:
+  CoreDataUtilsKit: afa365a02384ce5f9c88e06225358be95cd9dc57
   NetworkUtilsKit: 3c6cac1eec864dcd576d5413da7a7537d6ebf085
   PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
   UtilsKit: 0f31f54b7ba646a960497580b7e1a9a686a4a00a
 
-PODFILE CHECKSUM: 586a219f1917bb5011aa60ce2131dc5142a1442b
+PODFILE CHECKSUM: 462f04380dbedcded4b5be5967646943275308f6
 
 COCOAPODS: 1.10.1

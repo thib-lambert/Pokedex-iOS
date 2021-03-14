@@ -6,5 +6,7 @@
 #define Pokedex_h
 
 #import <UIKit/UIKit.h>
+@import UtilsKit;
+@import CoreDataUtilsKit;
 
 #endif /* Pokedex_h */
