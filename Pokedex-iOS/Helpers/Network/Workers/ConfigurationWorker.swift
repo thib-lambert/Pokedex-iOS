@@ -17,7 +17,7 @@ class ConfigurationWorker: Worker {
             .response(ConfigurationResponse.self)
             .then { config -> Promise<Int> in
                 // TODO: Return good value
-                return .value(151)
+                return .value(3)
             }
     }
 }
