@@ -2,14 +2,11 @@
 //  PokemonRequest.swift
 //  Pokedex-iOS
 //
-//  Created by Thibaud Lambert on 13/03/2021.
+//  Created by Thibaud Lambert on 16/03/2021.
 //
-
-import NetworkUtilsKit
-import PromiseKit
 
 struct PokemonRequest: PokeApiRequest {
 
-    var path: String { "/api/v2/pokemon" }
-    var parameters: Parameters? { ["limit": Configuration.shared.kPokemonNumber] }
+    var pokemonId: Int
+    var path: String { "/api/v2/pokemon/\(pokemonId)" }
 }
