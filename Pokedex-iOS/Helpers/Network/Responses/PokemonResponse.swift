@@ -2,30 +2,20 @@
 //  PokemonResponse.swift
 //  Pokedex-iOS
 //
-//  Created by Thibaud Lambert on 13/03/2021.
+//  Created by Thibaud Lambert on 16/03/2021.
 //
 
-struct PokemonResponse: Decodable {
-
-    struct PokemonDataResponse: Decodable, Pokemon {
-
-        enum CodingKeys: String, CodingKey {
-            case name, _url = "url"
-        }
-
-        let name: String
-        let _url: String
-
-        var id: Int {
-            let components = self._url.components(separatedBy: "/")
-            return Int(components[components.count - 2]) ?? -1
-        }
-        var url: String? { self._url }
-    }
+struct PokemonResponse: Decodable, Pokemon {
 
     enum CodingKeys: String, CodingKey {
-        case results
+        case id
+        case isDefault = "is_default"
+        case weight, height, name
     }
 
-    let results: [PokemonDataResponse]
+    var id: Int
+    var isDefault: Bool
+    var weight: Int
+    var height: Int
+    var name: String
 }

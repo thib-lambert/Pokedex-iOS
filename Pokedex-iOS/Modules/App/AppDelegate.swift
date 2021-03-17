@@ -10,9 +10,6 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    // MARK: - Workers
-    private let pokemonWorker =  PokemonWorker()
-
     // MARK: - Variables
     var window: UIWindow?
 
@@ -30,9 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Init CoreData
         _ = Configuration.shared
-
-        // Fetch data from API
-        self.pokemonWorker.fetchData()
 
         return true
     }

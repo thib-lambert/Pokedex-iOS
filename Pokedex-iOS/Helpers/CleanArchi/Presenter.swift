@@ -8,10 +8,10 @@
 class Presenter<V: UIViewController> {
     
     // MARK: - Variables
-    weak var viewController: V?
+    weak var view: V?
     
     // MARK: - Init
     required init(with controller: V) {
-        self.viewController = controller
+        self.view = controller
     }
 }

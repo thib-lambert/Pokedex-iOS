@@ -7,6 +7,8 @@
 
 protocol Pokemon {
     var id: Int { get }
+    var isDefault: Bool { get }
+    var weight: Int { get }
+    var height: Int { get }
     var name: String { get }
-    var url: String? { get }
 }

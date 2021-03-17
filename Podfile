@@ -12,4 +12,5 @@ target 'Pokedex-iOS' do
     pod 'NetworkUtilsKit'
     pod 'PromiseKit'
     pod 'CoreDataUtilsKit'
+    pod 'UtilsKit'
 end
