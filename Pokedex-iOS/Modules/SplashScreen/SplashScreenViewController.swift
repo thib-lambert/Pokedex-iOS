@@ -35,9 +35,12 @@ class SplashScreenViewController: UIViewController {
     func didLoadData() {
         log(.debug, "SplashScreenViewController ~> Did load data")
 
-        if let viewController = R.storyboard.pokemons.pokemonsNavigationViewController() {
-            viewController.modalPresentationStyle = .fullScreen
-            self.present(viewController, animated: true)
+        // TODO: Remove DispatchQueue
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [weak self] in
+            if let viewController = R.storyboard.pokemons.pokemonsNavigationViewController() {
+                viewController.modalPresentationStyle = .fullScreen
+                self?.present(viewController, animated: true)
+            }
         }
     }
 }

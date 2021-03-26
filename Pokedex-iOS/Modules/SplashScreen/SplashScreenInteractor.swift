@@ -21,11 +21,13 @@ class SplashScreenInteractor: Interactor<SplashScreenViewController, SplashScree
         _ = configurationWorker.fetchData()
             .then { [weak self] count -> Guarantee<Void> in
                 
-                guard let self = self else { return .value }
+                guard let strongSelf = self,
+                      strongSelf.pokemonWorker.getAll().count != count
+                else { return .value }
                 
                 var subRequests: [Promise<Void>] = []
                 for pokemonId in 1...count {
-                    let request = self.pokemonWorker.fetchData(pokemonId: pokemonId)
+                    let request = strongSelf.pokemonWorker.fetchData(pokemonId: pokemonId)
                     subRequests.append(request)
                 }
                 
