@@ -13,4 +13,5 @@ target 'Pokedex-iOS' do
     pod 'PromiseKit'
     pod 'CoreDataUtilsKit'
     pod 'UtilsKit'
+    pod 'R.swift', '~> 5.0'
 end

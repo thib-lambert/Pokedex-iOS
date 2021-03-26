@@ -17,8 +17,10 @@ extension PokeApiRequest {
     var host: String { "pokeapi.co" }
     var method: RequestMethod { .get }
     
-    func response<T: Decodable>(_ type: T.Type,
-                                retry: Bool = true) -> Promise<T> {
+    /**
+     Send request and return response or error
+     */
+    func response<T: Decodable>(_ type: T.Type) -> Promise<T> {
         Promise { resolver in
             self.response(type) { results in
                 switch results {
@@ -29,6 +31,23 @@ extension PokeApiRequest {
         }.recover { error -> Promise<T> in
             log(error: error)            
             return .init(error: error)
+        }
+    }
+}
+
+extension MockProtocol {
+    
+    /**
+        Send request and return response or error
+     */
+    func mock<T: Decodable>(_ type: T.Type) -> Promise<T> {
+        Promise { resolver in
+            self.mock(type) { results in
+                switch results {
+                case .success(let response): resolver.fulfill(response)
+                case .failure(let error): resolver.reject(error)
+                }
+            }
         }
     }
 }

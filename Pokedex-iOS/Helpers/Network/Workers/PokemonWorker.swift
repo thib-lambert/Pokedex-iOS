@@ -21,7 +21,7 @@ class PokemonWorker: Worker {
     // MARK: - Fetch
     func fetchData(pokemonId: Int) -> Promise<Void> {
         PokemonRequest(pokemonId: pokemonId)
-            .response(PokemonResponse.self)
+            .mock(PokemonResponse.self)
             .then { pokemon -> Promise<Void> in
                 
                 DB_Pokemon.update(with: pokemon)
