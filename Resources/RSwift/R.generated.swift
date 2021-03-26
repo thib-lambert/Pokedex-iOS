@@ -123,50 +123,6 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.color` struct is generated, and contains static references to 2 colors.
-  struct color {
-    /// Color `AccentColor`.
-    static let accentColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "AccentColor")
-    /// Color `textColor`.
-    static let textColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "textColor")
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "AccentColor", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func accentColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.accentColor, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "textColor", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func textColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.textColor, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "AccentColor", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func accentColor(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.accentColor.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "textColor", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func textColor(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.textColor.name)
-    }
-    #endif
-
-    fileprivate init() {}
-  }
-
   /// This `R.file` struct is generated, and contains static references to 1 files.
   struct file {
     /// Resource file `pokemonMock.json`.
@@ -214,38 +170,6 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.info` struct is generated, and contains static references to 1 properties.
-  struct info {
-    struct uiApplicationSceneManifest {
-      static let _key = "UIApplicationSceneManifest"
-      static let uiApplicationSupportsMultipleScenes = false
-
-      fileprivate init() {}
-    }
-
-    fileprivate init() {}
-  }
-
-  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
-  struct nib {
-    /// Nib `PokemonCell`.
-    static let pokemonCell = _R.nib._PokemonCell()
-
-    #if os(iOS) || os(tvOS)
-    /// `UINib(name: "PokemonCell", in: bundle)`
-    @available(*, deprecated, message: "Use UINib(resource: R.nib.pokemonCell) instead")
-    static func pokemonCell(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.pokemonCell)
-    }
-    #endif
-
-    static func pokemonCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PokemonCell? {
-      return R.nib.pokemonCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PokemonCell
-    }
-
-    fileprivate init() {}
-  }
-
   /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `PokemonCell`.
@@ -270,44 +194,9 @@ struct R: Rswift.Validatable {
 struct _R: Rswift.Validatable {
   static func validate() throws {
     #if os(iOS) || os(tvOS)
-    try nib.validate()
-    #endif
-    #if os(iOS) || os(tvOS)
     try storyboard.validate()
     #endif
   }
-
-  #if os(iOS) || os(tvOS)
-  struct nib: Rswift.Validatable {
-    static func validate() throws {
-      try _PokemonCell.validate()
-    }
-
-    struct _PokemonCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
-      typealias ReusableType = PokemonCell
-
-      let bundle = R.hostingBundle
-      let identifier = "PokemonCell"
-      let name = "PokemonCell"
-
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PokemonCell? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PokemonCell
-      }
-
-      static func validate() throws {
-        if UIKit.UIImage(named: "chevron", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'chevron' is used in nib 'PokemonCell', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "pokemonLogo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'pokemonLogo' is used in nib 'PokemonCell', but couldn't be loaded.") }
-        if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "textColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'textColor' is used in nib 'PokemonCell', but couldn't be loaded.") }
-        }
-      }
-
-      fileprivate init() {}
-    }
-
-    fileprivate init() {}
-  }
-  #endif
 
   #if os(iOS) || os(tvOS)
   struct storyboard: Rswift.Validatable {

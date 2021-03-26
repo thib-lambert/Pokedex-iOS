@@ -5,8 +5,6 @@
 //  Created by Thibaud Lambert on 08/03/2021.
 //
 
-import UIKit
-
 class PokemonsViewController: UIViewController {
 
     // MARK: - Outlets

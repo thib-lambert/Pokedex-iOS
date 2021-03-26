@@ -18,13 +18,14 @@ class PokemonCell: UITableViewCell {
             guard let pokemon = self.pokemon else { return }
 
             self.pokemonIdLabel.text = "\(pokemon.id)"
-            self.pokemonLabel.text = pokemon.name
+            self.pokemonLabel.text = NSLocalizedString(pokemon.name, comment: pokemon.name)
             // TODO: Setup image
+            self.pokemonImageView.image = R.image.pokemonLogo()
         }
     }
 }
 
 // MARK: - ViewReusable
 extension PokemonCell: ViewReusable {
-    static var identifier: String { "PokemonCell" }
+    static var identifier: String { R.reuseIdentifier.pokemonCell.identifier }
 }
