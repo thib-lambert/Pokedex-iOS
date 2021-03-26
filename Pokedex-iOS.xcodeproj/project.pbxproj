@@ -16,6 +16,7 @@
 		531D16E125F6B87500EC25A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 531D16DF25F6B87500EC25A4 /* LaunchScreen.storyboard */; };
 		53273DCD260E2D020006DBC7 /* pokemonMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 53273DCC260E2D020006DBC7 /* pokemonMock.json */; };
 		53273DDC260E2E8E0006DBC7 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53273DDB260E2E8E0006DBC7 /* R.generated.swift */; };
+		53273DFA260E5F600006DBC7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 53273DFC260E5F600006DBC7 /* Localizable.strings */; };
 		53479DC025FE469900C0EB50 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53479DBF25FE469900C0EB50 /* Configuration.swift */; };
 		53479DDA25FE488C00C0EB50 /* Pokedex-iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 53479DD825FE488C00C0EB50 /* Pokedex-iOS.xcdatamodeld */; };
 		53479DDD25FE493300C0EB50 /* DB_Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53479DDC25FE493300C0EB50 /* DB_Pokemon.swift */; };
@@ -54,6 +55,8 @@
 		531D16E225F6B87500EC25A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53273DCC260E2D020006DBC7 /* pokemonMock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pokemonMock.json; sourceTree = "<group>"; };
 		53273DDB260E2E8E0006DBC7 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = R.generated.swift; path = Resources/RSwift/R.generated.swift; sourceTree = SOURCE_ROOT; };
+		53273DFB260E5F600006DBC7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		53273DFE260E5F7B0006DBC7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		53479DBF25FE469900C0EB50 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		53479DD925FE488C00C0EB50 /* Pokedex-iOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Pokedex-iOS.xcdatamodel"; sourceTree = "<group>"; };
 		53479DDC25FE493300C0EB50 /* DB_Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DB_Pokemon.swift; sourceTree = "<group>"; };
@@ -232,6 +235,7 @@
 			children = (
 				53273DD7260E2D920006DBC7 /* RSwift */,
 				531D16DD25F6B87500EC25A4 /* Assets.xcassets */,
+				53273DFC260E5F600006DBC7 /* Localizable.strings */,
 				531D16E225F6B87500EC25A4 /* Info.plist */,
 				53D7310625FC3CAE003F1975 /* Pokedex-iOS-Bridging-Header.h */,
 			);
@@ -372,6 +376,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = 531D16C825F6B87400EC25A4;
 			productRefGroup = 531D16D225F6B87400EC25A4 /* Products */;
@@ -391,6 +396,7 @@
 				531D16E125F6B87500EC25A4 /* LaunchScreen.storyboard in Resources */,
 				53DF3AF62602A73F00F74EE1 /* Pokemons.storyboard in Resources */,
 				53A83C0E2602C4CD005862C7 /* PokemonCell.xib in Resources */,
+				53273DFA260E5F600006DBC7 /* Localizable.strings in Resources */,
 				53273DCD260E2D020006DBC7 /* pokemonMock.json in Resources */,
 				53B4EE20260288120064D50B /* SplashScreen.storyboard in Resources */,
 				531D16DE25F6B87500EC25A4 /* Assets.xcassets in Resources */,
@@ -440,7 +446,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/Resources/RSwift/R.generated.swift\"\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/Resources/RSwift/R.generated.swift\" --generators file,image,storyboard,reuseIdentifier\n";
 		};
 		B4152C218D3D5F9B98C6EABD /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -504,6 +510,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		53273DFC260E5F600006DBC7 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				53273DFB260E5F600006DBC7 /* en */,
+				53273DFE260E5F7B0006DBC7 /* fr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -511,6 +526,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -572,6 +588,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
