@@ -15,7 +15,6 @@ class PokemonsViewController: UIViewController {
             self.tableView.delegate = self
             self.tableView.dataSource = self
             self.tableView.tableFooterView = UIView()
-            self.tableView.tableHeaderView = PokemonListHeader(frame: CGRect(origin: .zero, size: CGSize(width: 0, height: 50)))
             self.tableView.register(PokemonCell.self)
         }
     }
@@ -54,6 +53,7 @@ extension PokemonsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: PokemonCell = tableView.dequeueCell()
         cell.pokemon = self.pokemons[indexPath.row]
+        cell.selectionStyle = .none
         return cell
     }
 
