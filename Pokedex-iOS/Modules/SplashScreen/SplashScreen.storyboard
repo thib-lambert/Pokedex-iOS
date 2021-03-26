@@ -17,6 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultBackground" translatesAutoresizingMaskIntoConstraints="NO" id="GbI-7H-I8y" userLabel="backgroundImage">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="HB6-D8-M6x">
                                 <rect key="frame" x="187" y="782" width="40" height="40"/>
                                 <constraints>
@@ -25,7 +28,7 @@
                                 </constraints>
                                 <color key="color" systemColor="systemYellowColor"/>
                             </activityIndicatorView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Wsg-lV-X4F">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pokemonLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Wsg-lV-X4F">
                                 <rect key="frame" x="30" y="373" width="354" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="Ful-96-FHA"/>
@@ -35,8 +38,12 @@
                         <viewLayoutGuide key="safeArea" id="3PB-33-6As"/>
                         <color key="backgroundColor" name="AccentColor"/>
                         <constraints>
+                            <constraint firstItem="GbI-7H-I8y" firstAttribute="top" secondItem="yba-Ir-TtX" secondAttribute="top" id="Exq-HB-Ygd"/>
                             <constraint firstItem="3PB-33-6As" firstAttribute="bottom" secondItem="HB6-D8-M6x" secondAttribute="bottom" constant="40" id="OcW-pj-3gM"/>
+                            <constraint firstItem="GbI-7H-I8y" firstAttribute="leading" secondItem="yba-Ir-TtX" secondAttribute="leading" id="ZZc-YU-44X"/>
                             <constraint firstItem="Wsg-lV-X4F" firstAttribute="leading" secondItem="3PB-33-6As" secondAttribute="leading" constant="30" id="bPi-Oj-hP5"/>
+                            <constraint firstAttribute="trailing" secondItem="GbI-7H-I8y" secondAttribute="trailing" id="mvT-ic-RzE"/>
+                            <constraint firstAttribute="bottom" secondItem="GbI-7H-I8y" secondAttribute="bottom" id="onv-xa-odH"/>
                             <constraint firstItem="Wsg-lV-X4F" firstAttribute="centerY" secondItem="yba-Ir-TtX" secondAttribute="centerY" id="pbp-1a-dKf"/>
                             <constraint firstItem="HB6-D8-M6x" firstAttribute="centerX" secondItem="yba-Ir-TtX" secondAttribute="centerX" id="tDb-tV-1rl"/>
                             <constraint firstItem="3PB-33-6As" firstAttribute="trailing" secondItem="Wsg-lV-X4F" secondAttribute="trailing" constant="30" id="xRL-Pf-jKv"/>
@@ -53,7 +60,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo" width="2500" height="917"/>
+        <image name="defaultBackground" width="1600" height="800"/>
+        <image name="pokemonLogo" width="2500" height="917"/>
         <namedColor name="AccentColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

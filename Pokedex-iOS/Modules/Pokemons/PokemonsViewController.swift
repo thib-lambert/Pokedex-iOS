@@ -28,9 +28,7 @@ class PokemonsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.title = "Pokemons"
-
+        
         self.interactor.refresh()
     }
 
@@ -43,8 +41,8 @@ class PokemonsViewController: UIViewController {
 
 // MARK: - Storyboard
 extension PokemonsViewController: StoryboardProtocol {
-    static var storyboardName: String { "Pokemons" }
-    static var identifier: String? { "PokemonsViewController" }
+    static var storyboardName: String { R.storyboard.pokemons.name }
+    static var identifier: String? { R.storyboard.pokemons.pokemonsViewController.identifier }
 }
 
 // MARK: - UITableViewDataSource
@@ -60,6 +58,6 @@ extension PokemonsViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        // TODO: Action
     }
 }

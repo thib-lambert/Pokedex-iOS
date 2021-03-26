@@ -7,36 +7,37 @@
 //
 
 class SplashScreenViewController: UIViewController {
-    
+
     // MARK: - Outlets
     @IBOutlet private weak var loader: UIActivityIndicatorView! {
         didSet {
             self.loader.startAnimating()
         }
     }
-	
-	// MARK: - Variables
-	private lazy var interactor: SplashScreenInteractor = {
-		SplashScreenInteractor(with: self)
-	}()
-	
-	// MARK: - View life cycle
-	override func viewWillAppear(_ animated: Bool) {
-		super.viewWillAppear(animated)
-		
-		self.interactor.refreshAllData()
-	}
-	
-	// MARK: - Refresh
-	func loadingData() {
-		log(.debug, "SplashScreenViewController ~> Loading Data")
-	}
-	
-	func didLoadData() {
+
+    // MARK: - Variables
+    private lazy var interactor: SplashScreenInteractor = {
+        SplashScreenInteractor(with: self)
+    }()
+
+    // MARK: - View life cycle
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        self.interactor.refreshAllData()
+    }
+
+    // MARK: - Refresh
+    func loadingData() {
+        log(.debug, "SplashScreenViewController ~> Loading Data")
+    }
+
+    func didLoadData() {
         log(.debug, "SplashScreenViewController ~> Did load data")
-        
-        let vc = TabBarViewController.fromStoryboard()
-        vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: true)
-	}
+
+        if let viewController = R.storyboard.pokemons.pokemonsNavigationViewController() {
+            viewController.modalPresentationStyle = .fullScreen
+            self.present(viewController, animated: true)
+        }
+    }
 }
