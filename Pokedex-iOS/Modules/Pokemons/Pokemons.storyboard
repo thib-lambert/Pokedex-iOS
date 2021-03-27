@@ -12,7 +12,7 @@
         <scene sceneID="2Xb-um-rlw">
             <objects>
                 <navigationController storyboardIdentifier="PokemonsNavigationViewController" id="TV1-4v-dHc" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" id="Mck-hO-Kju">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mck-hO-Kju">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -62,6 +62,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tVb-AQ-qBL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="271" y="94"/>
+        </scene>
+        <!--Pokemon Detail View Controller-->
+        <scene sceneID="2rI-fi-2x8">
+            <objects>
+                <viewController storyboardIdentifier="PokemonDetailViewController" id="mg0-hK-nXU" customClass="PokemonDetailViewController" customModule="Pokedex_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lIa-Uu-rOi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="vl8-DM-hbt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1m3-ZW-B0w"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4XF-EB-cUa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1120" y="94"/>
         </scene>
     </scenes>
     <resources>

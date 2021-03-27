@@ -12,6 +12,7 @@ class PokemonsViewController: UIViewController {
         didSet {
             self.tableView.delegate = self
             self.tableView.dataSource = self
+            self.tableView.separatorStyle = .none
             self.tableView.tableFooterView = UIView()
             self.tableView.register(PokemonCell.self)
         }
@@ -25,8 +26,18 @@ class PokemonsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.interactor.refresh()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 
     // MARK: - Refresh
@@ -56,6 +67,9 @@ extension PokemonsViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO: Action
+        if let viewController = R.storyboard.pokemons.pokemonDetailViewController() {
+            viewController.pokemon = self.pokemons[indexPath.row]
+            self.show(viewController, sender: self)
+        }
     }
 }

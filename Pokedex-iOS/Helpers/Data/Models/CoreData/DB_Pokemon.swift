@@ -34,5 +34,11 @@ extension DB_Pokemon: Pokemon {
     var isDefault: Bool { self.a_isDefault }
     var weight: Int { Int(self.a_weight) }
     var height: Int { Int(self.a_height) }
-    var name: String { self.a_name ?? "No name" }
+    var name: String {
+        if let name = self.a_name {
+            return NSLocalizedString(name, comment: name)
+        } else {
+            return "No name"
+        }
+    }
 }
