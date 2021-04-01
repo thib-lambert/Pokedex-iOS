@@ -5,6 +5,8 @@
 //  Created by Thibaud Lambert on 17/03/2021.
 //
 
+import SDWebImage
+
 class PokemonCell: UITableViewCell {
 
     // MARK: - Outlets
@@ -19,8 +21,10 @@ class PokemonCell: UITableViewCell {
 
             self.pokemonIdLabel.text = "\(pokemon.id)"
             self.pokemonLabel.text = pokemon.name
-            // TODO: Setup image
-            self.pokemonImageView.image = R.image.pokemonLogo()
+            if let imageUrl = pokemon.imageUrl {
+                self.pokemonImageView.sd_setImage(with: imageUrl,
+                                                          placeholderImage: R.image.pokemonLogo())
+            }
         }
     }
 }
