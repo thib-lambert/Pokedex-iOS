@@ -12,3 +12,7 @@ protocol Pokemon {
     var height: Int { get }
     var name: String { get }
 }
+
+extension Pokemon {
+    var imageUrl: URL? { URL(string: "https://pokeres.bastionbot.org/images/pokemon/\(self.id).png")}
+}

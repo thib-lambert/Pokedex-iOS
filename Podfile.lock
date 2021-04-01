@@ -19,6 +19,9 @@ PODS:
   - R.swift (5.4.0):
     - R.swift.Library (~> 5.3.0)
   - R.swift.Library (5.3.0)
+  - SDWebImage (5.10.4):
+    - SDWebImage/Core (= 5.10.4)
+  - SDWebImage/Core (5.10.4)
   - UtilsKit (2.0.7):
     - UtilsKit/Core (= 2.0.7)
   - UtilsKit/Core (2.0.7)
@@ -28,6 +31,7 @@ DEPENDENCIES:
   - NetworkUtilsKit
   - PromiseKit
   - R.swift (~> 5.0)
+  - SDWebImage (~> 5.0)
   - UtilsKit
 
 SPEC REPOS:
@@ -37,6 +41,7 @@ SPEC REPOS:
     - PromiseKit
     - R.swift
     - R.swift.Library
+    - SDWebImage
     - UtilsKit
 
 SPEC CHECKSUMS:
@@ -45,8 +50,9 @@ SPEC CHECKSUMS:
   PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
   R.swift: c533450b0f7dc494e0993f5f1a1db925d84c3006
   R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
+  SDWebImage: c666b97e1fa9c64b4909816a903322018f0a9c84
   UtilsKit: 0f31f54b7ba646a960497580b7e1a9a686a4a00a
 
-PODFILE CHECKSUM: f9cb32ce8eee692700d08987e3fc1c17fad74b0d
+PODFILE CHECKSUM: a2e3f4f90a8825cd9c977705e95fedb9c80004f0
 
 COCOAPODS: 1.10.1

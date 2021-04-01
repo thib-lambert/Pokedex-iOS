@@ -14,4 +14,5 @@ target 'Pokedex-iOS' do
     pod 'CoreDataUtilsKit'
     pod 'UtilsKit'
     pod 'R.swift', '~> 5.0'
+    pod 'SDWebImage', '~> 5.0'
 end
