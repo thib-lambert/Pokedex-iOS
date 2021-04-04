@@ -27,6 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Init CoreData
         _ = Configuration.shared
+        
+        UINavigationBar.appearance().barTintColor = .white
+        UINavigationBar.appearance().tintColor = .navigationControllerTextColor
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor : UIColor.navigationControllerTextColor]
 
         return true
     }
