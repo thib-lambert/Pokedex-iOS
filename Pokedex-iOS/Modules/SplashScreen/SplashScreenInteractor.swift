@@ -11,23 +11,19 @@ import PromiseKit
 class SplashScreenInteractor: Interactor<SplashScreenViewController, SplashScreenPresenter> {
     
     // MARK: - Variables
-    private var configurationWorker = ConfigurationWorker()
-    private var pokemonWorker = PokemonWorker()
+    private let configurationWorker = ConfigurationWorker()
+    private let pokemonWorker = PokemonWorker()
     
     // MARK: - Refresh
-    func refreshAllData() {
-        self.presenter.loadingData()
-        
-        _ = configurationWorker.fetchData()
-            .then { [weak self] count -> Guarantee<Void> in
-                
-                guard let strongSelf = self,
-                      strongSelf.pokemonWorker.getAll().count != count
+    func refreshAllData() {        
+        _ = self.configurationWorker.fetchData()
+            .then { [pokemonWorker] count -> Guarantee<Void> in
+                guard pokemonWorker.getAll().count != count
                 else { return .value }
                 
                 var subRequests: [Promise<Void>] = []
                 for pokemonId in 1...count {
-                    let request = strongSelf.pokemonWorker.fetchData(pokemonId: pokemonId)
+                    let request = pokemonWorker.fetchData(pokemonId: pokemonId)
                     subRequests.append(request)
                 }
                 
