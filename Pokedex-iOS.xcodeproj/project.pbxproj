@@ -225,9 +225,9 @@
 			isa = PBXGroup;
 			children = (
 				53B4EE1C260288120064D50B /* SplashScreen.storyboard */,
+				53B4EE1E260288120064D50B /* SplashScreenViewController.swift */,
 				53B4EE1B260288120064D50B /* SplashScreenInteractor.swift */,
 				53B4EE1D260288120064D50B /* SplashScreenPresenter.swift */,
-				53B4EE1E260288120064D50B /* SplashScreenViewController.swift */,
 			);
 			path = SplashScreen;
 			sourceTree = "<group>";
@@ -696,7 +696,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CTHFA2J274;
+				DEVELOPMENT_TEAM = T7ULJL4398;
 				INFOPLIST_FILE = "Pokedex-iOS/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (

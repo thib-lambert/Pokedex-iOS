@@ -8,10 +8,6 @@
 
 class SplashScreenPresenter: Presenter<SplashScreenViewController> {
 
-    func loadingData() {
-        self.view?.loadingData()
-    }
-
     func didLoadData() {
         self.view?.didLoadData()
     }
